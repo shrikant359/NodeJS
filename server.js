@@ -1,6 +1,8 @@
 var expr=require('express');
 var hbs = require('hbs');
 var app=expr();
+const fs=require('fs');
+const port=process.env.PORT||3000;
 app.set('view engine','hbs');
 //app.use(expr.static(__dirname + '/view'));
 //app.use(expr.static(__dirname + '/pvt'));
@@ -24,4 +26,7 @@ contact:'contact',
 address:'address'
 });
 });
-app.listen(3000);
+//app.listen(3000);
+app.listen(port,()=>{
+	console.log('server is up to on port ${port}');
+});
